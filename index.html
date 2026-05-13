@@ -27,7 +27,6 @@
         <a href="#fluxo">Fluxo</a>
         <a href="#assinaturas">Assinaturas</a>
         <a href="#termos">Termos</a>
-        <a href="#downloads">Downloads</a>
       </nav>
     </div>
   </header>
@@ -35,7 +34,7 @@
   <main>
     <section id="inicio" class="hero">
       <div class="container hero-grid">
-        <div class="hero-text">
+        <div class="hero-text reveal">
           <p class="eyebrow">PROARTE | Monitoramento de OAEs</p>
 
           <h1>Guia rápido para análise cinemática InSAR em Obras de Arte Especiais</h1>
@@ -52,17 +51,7 @@
           </div>
         </div>
 
-        <div class="hero-card hero-visual" aria-label="Resumo visual da metodologia">
-          <div class="orbit-icon" aria-hidden="true">
-            <span class="satellite">▰</span>
-            <span class="signal signal-one"></span>
-            <span class="signal signal-two"></span>
-            <span class="bridge-line"></span>
-            <span class="bridge-deck"></span>
-            <span class="bridge-pillar bridge-pillar-one"></span>
-            <span class="bridge-pillar bridge-pillar-two"></span>
-          </div>
-
+        <div class="hero-card principle-card reveal delay-1" aria-label="Princípio central da metodologia">
           <span class="status-pill">Princípio central</span>
 
           <h2>A cinemática vem primeiro.</h2>
@@ -71,13 +60,35 @@
             A magnitude absoluta só ganha peso quando o comportamento é
             espacialmente coerente, temporalmente persistente e fisicamente plausível.
           </p>
+
+          <div class="principle-stack" aria-hidden="true">
+            <div class="principle-item">
+              <span>1</span>
+              <strong>Coerência espacial</strong>
+            </div>
+
+            <div class="principle-item">
+              <span>2</span>
+              <strong>Persistência temporal</strong>
+            </div>
+
+            <div class="principle-item">
+              <span>3</span>
+              <strong>Plausibilidade física</strong>
+            </div>
+
+            <div class="principle-result">
+              <span>Síntese</span>
+              <strong>Classificação técnica da OAE</strong>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="principio" class="section">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Base da interpretação</p>
           <h2>InSAR é triagem, não diagnóstico final</h2>
           <p>
@@ -88,7 +99,7 @@
         </div>
 
         <div class="cards-grid three-columns">
-          <article class="info-card">
+          <article class="info-card reveal">
             <span class="card-icon" aria-hidden="true">◎</span>
             <h3>Coerência espacial</h3>
             <p>
@@ -97,7 +108,7 @@
             </p>
           </article>
 
-          <article class="info-card">
+          <article class="info-card reveal delay-1">
             <span class="card-icon" aria-hidden="true">↔</span>
             <h3>Persistência temporal</h3>
             <p>
@@ -106,7 +117,7 @@
             </p>
           </article>
 
-          <article class="info-card">
+          <article class="info-card reveal delay-2">
             <span class="card-icon" aria-hidden="true">⌁</span>
             <h3>Plausibilidade física</h3>
             <p>
@@ -120,7 +131,7 @@
 
     <section id="fluxo" class="section section-muted">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Método de leitura</p>
           <h2>Fluxo de análise</h2>
           <p>
@@ -130,25 +141,25 @@
         </div>
 
         <div class="timeline">
-          <article class="timeline-item">
+          <article class="timeline-item reveal">
             <span>1</span>
             <h3>Confiabilidade dos dados</h3>
             <p>Pontos suficientes, séries contínuas e coerência interferométrica aceitável.</p>
           </article>
 
-          <article class="timeline-item">
+          <article class="timeline-item reveal delay-1">
             <span>2</span>
             <h3>Coerência cinemática</h3>
             <p>Repetição espacial, paralelismo, inflexão ou aceleração entre pontos próximos.</p>
           </article>
 
-          <article class="timeline-item">
+          <article class="timeline-item reveal delay-2">
             <span>3</span>
             <h3>Magnitude absoluta</h3>
             <p>Verificação se o acumulado é fisicamente elevado e estruturalmente plausível.</p>
           </article>
 
-          <article class="timeline-item">
+          <article class="timeline-item reveal delay-3">
             <span>4</span>
             <h3>Síntese final</h3>
             <p>Classificação como estável, suspeito, anômalo ou inconclusivo.</p>
@@ -159,7 +170,7 @@
 
     <section id="assinaturas" class="section">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Padrões típicos</p>
           <h2>Assinaturas cinemáticas</h2>
           <p>
@@ -168,37 +179,37 @@
         </div>
 
         <div class="cards-grid three-columns">
-          <article class="info-card">
+          <article class="info-card reveal">
             <span class="status-dot status-stable"></span>
             <h3>Estabilidade cinemática</h3>
             <p>Séries próximas, quase paralelas e sem mudança clara de velocidade.</p>
           </article>
 
-          <article class="info-card">
+          <article class="info-card reveal delay-1">
             <span class="status-dot status-noise"></span>
             <h3>Provável ruído</h3>
             <p>Uma série destoa das demais, sem repetição espacial ou temporal consistente.</p>
           </article>
 
-          <article class="info-card">
+          <article class="info-card reveal delay-2">
             <span class="status-dot status-cycle"></span>
             <h3>Comportamento cíclico</h3>
             <p>Oscilações reversíveis, com picos e vales recorrentes ao longo do tempo.</p>
           </article>
 
-          <article class="info-card">
+          <article class="info-card reveal">
             <span class="status-dot status-warning"></span>
             <h3>Deformação continuada</h3>
             <p>Deslocamento progressivo, acumulado e com tendência temporal persistente.</p>
           </article>
 
-          <article class="info-card">
+          <article class="info-card reveal delay-1">
             <span class="status-dot status-warning"></span>
             <h3>Inflexão de tendência</h3>
             <p>Mudança de inclinação da curva, indicando alteração no regime de velocidade.</p>
           </article>
 
-          <article class="info-card">
+          <article class="info-card reveal delay-2">
             <span class="status-dot status-alert"></span>
             <h3>Step change</h3>
             <p>Mudança abrupta de patamar, que exige validação espacial e contextual.</p>
@@ -209,7 +220,7 @@
 
     <section id="termos" class="section section-muted">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Consulta rápida</p>
           <h2>Guia rápido de termos</h2>
           <p>
@@ -218,46 +229,23 @@
           </p>
         </div>
 
-        <label class="search-label" for="termSearch">Buscar termo ou trecho do relatório</label>
-        <input
-          id="termSearch"
-          class="search-input"
-          type="search"
-          placeholder="Exemplo: estabilidade, anomalia, baseline, step change, acompanhamento..."
-        />
+        <div class="reveal">
+          <label class="search-label" for="termSearch">Buscar termo ou trecho do relatório</label>
+          <input
+            id="termSearch"
+            class="search-input"
+            type="search"
+            placeholder="Exemplo: estabilidade, anomalia, baseline, step change, acompanhamento..."
+          />
 
-        <div class="terms-helper">
-          <strong>Como usar:</strong>
-          abra uma frase do relatório, escolha o termo mais adequado e leia quando aplicá-lo.
+          <div class="terms-helper">
+            <strong>Como usar:</strong>
+            abra uma frase do relatório, escolha o termo mais adequado e leia quando aplicá-lo.
+          </div>
         </div>
 
         <div id="termGroups" class="term-groups">
           <!-- Os grupos serão criados pelo JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <section id="downloads" class="section">
-      <div class="container">
-        <div class="download-box">
-          <div>
-            <p class="eyebrow">Materiais de apoio</p>
-            <h2>Baixe o guia e a apresentação</h2>
-            <p>
-              Use os materiais como referência para padronização de análises,
-              relatórios e priorização de inspeções.
-            </p>
-          </div>
-
-          <div class="download-actions">
-            <a class="btn btn-primary" href="assets/guia-insar-oae.pdf" download>
-              Baixar guia
-            </a>
-
-            <a class="btn btn-secondary" href="assets/apresentacao-insar-oae.pdf" download>
-              Baixar apresentação
-            </a>
-          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
 const gruposDeTermos = [
   {
-    categoria: "Parágrafo 1",
     frase: "A análise indica comportamento cinemático compatível com cenário",
     termos: [
       {
@@ -26,7 +25,6 @@ const gruposDeTermos = [
     ],
   },
   {
-    categoria: "Parágrafo 1",
     frase: "Com valores de velocidade e aceleração",
     termos: [
       {
@@ -47,7 +45,6 @@ const gruposDeTermos = [
     ],
   },
   {
-    categoria: "Parágrafo 2",
     frase: "Em relação à anomalia cinemática",
     termos: [
       {
@@ -68,7 +65,6 @@ const gruposDeTermos = [
     ],
   },
   {
-    categoria: "Parágrafo 3",
     frase: "A distribuição espacial dos pontos é",
     termos: [
       {
@@ -89,7 +85,6 @@ const gruposDeTermos = [
     ],
   },
   {
-    categoria: "Parágrafo 3",
     frase: "Quanto à consistência entre os eixos longitudinal e transversal",
     termos: [
       {
@@ -110,7 +105,6 @@ const gruposDeTermos = [
     ],
   },
   {
-    categoria: "Parágrafo 3",
     frase: "No domínio temporal, as séries históricas indicam",
     termos: [
       {
@@ -141,7 +135,6 @@ const gruposDeTermos = [
     ],
   },
   {
-    categoria: "Parágrafo 4",
     frase: "O comportamento cinemático da estrutura pode ser classificado como",
     termos: [
       {
@@ -167,7 +160,6 @@ const gruposDeTermos = [
     ],
   },
   {
-    categoria: "Encaminhamento",
     frase: "Recomendação técnica",
     termos: [
       {
@@ -218,9 +210,7 @@ function filtrarGrupos(busca) {
 
   return gruposDeTermos
     .map((grupo) => {
-      const grupoCombina =
-        normalizarTexto(grupo.categoria).includes(buscaNormalizada) ||
-        normalizarTexto(grupo.frase).includes(buscaNormalizada);
+      const grupoCombina = normalizarTexto(grupo.frase).includes(buscaNormalizada);
 
       const termosFiltrados = grupo.termos.filter((termo) => {
         return (
@@ -250,7 +240,7 @@ function renderizarGrupos(grupos) {
 
   if (grupos.length === 0) {
     termGroups.innerHTML = `
-      <article class="term-empty">
+      <article class="term-empty reveal">
         <h3>Nenhum termo encontrado</h3>
         <p>Tente buscar por outra palavra, como baseline, estabilidade, inconclusivo ou step change.</p>
       </article>
@@ -260,7 +250,7 @@ function renderizarGrupos(grupos) {
 
   grupos.forEach((grupo, index) => {
     const article = document.createElement("article");
-    article.className = "term-group";
+    article.className = "term-group reveal";
 
     if (index === 0) {
       article.classList.add("is-open");
@@ -278,10 +268,9 @@ function renderizarGrupos(grupos) {
       .join("");
 
     article.innerHTML = `
-      <button class="term-group-header" type="button">
+      <button class="term-group-header" type="button" aria-expanded="${index === 0 ? "true" : "false"}">
         <span class="term-group-title">
-          <small>${grupo.categoria}</small>
-          <strong>${grupo.frase} [+]</strong>
+          <strong>${grupo.frase}</strong>
         </span>
         <span class="term-group-toggle">${index === 0 ? "−" : "+"}</span>
       </button>
@@ -304,10 +293,10 @@ termGroups.addEventListener("click", (event) => {
 
   const group = header.closest(".term-group");
   const toggle = group.querySelector(".term-group-toggle");
+  const isOpen = group.classList.toggle("is-open");
 
-  group.classList.toggle("is-open");
-
-  toggle.textContent = group.classList.contains("is-open") ? "−" : "+";
+  toggle.textContent = isOpen ? "−" : "+";
+  header.setAttribute("aria-expanded", isOpen ? "true" : "false");
 });
 
 termSearch.addEventListener("input", () => {
@@ -318,6 +307,7 @@ termSearch.addEventListener("input", () => {
     document.querySelectorAll(".term-group").forEach((group) => {
       group.classList.add("is-open");
       group.querySelector(".term-group-toggle").textContent = "−";
+      group.querySelector(".term-group-header").setAttribute("aria-expanded", "true");
     });
   }
 });
