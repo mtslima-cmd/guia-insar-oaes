@@ -1,6 +1,7 @@
 const gruposDeTermos = [
   {
-    frase: "A análise indica comportamento cinemático compatível com cenário",
+    titulo: "Cenário cinemático observado",
+    subtitulo: "Escolha o comportamento global predominante da OAE.",
     termos: [
       {
         titulo: "De estabilidade",
@@ -25,7 +26,9 @@ const gruposDeTermos = [
     ],
   },
   {
-    frase: "Com valores de velocidade e aceleração",
+    titulo: "Comparação com a baseline histórica",
+    subtitulo:
+      "Avalie se velocidade e aceleração estão dentro ou acima do padrão histórico.",
     termos: [
       {
         titulo: "Compatíveis com a baseline",
@@ -45,7 +48,8 @@ const gruposDeTermos = [
     ],
   },
   {
-    frase: "Em relação à anomalia cinemática",
+    titulo: "Grau de evidência de anomalia",
+    subtitulo: "Defina a força dos sinais interferométricos observados.",
     termos: [
       {
         titulo: "Ausência de evidências",
@@ -65,7 +69,9 @@ const gruposDeTermos = [
     ],
   },
   {
-    frase: "A distribuição espacial dos pontos é",
+    titulo: "Representatividade espacial dos pontos",
+    subtitulo:
+      "Avalie se a distribuição dos pontos permite leitura confiável da estrutura.",
     termos: [
       {
         titulo: "Coerente",
@@ -85,7 +91,9 @@ const gruposDeTermos = [
     ],
   },
   {
-    frase: "Quanto à consistência entre os eixos longitudinal e transversal",
+    titulo: "Consistência entre eixos de análise",
+    subtitulo:
+      "Verifique se os eixos longitudinal e transversal contam a mesma história.",
     termos: [
       {
         titulo: "Presença de consistência entre eixos",
@@ -105,7 +113,9 @@ const gruposDeTermos = [
     ],
   },
   {
-    frase: "No domínio temporal, as séries históricas indicam",
+    titulo: "Comportamento temporal das séries",
+    subtitulo:
+      "Identifique estabilidade, sazonalidade, progressão, inflexão ou mudança abrupta.",
     termos: [
       {
         titulo: "Estabilidade cinemática",
@@ -135,7 +145,9 @@ const gruposDeTermos = [
     ],
   },
   {
-    frase: "O comportamento cinemático da estrutura pode ser classificado como",
+    titulo: "Classificação final da análise",
+    subtitulo:
+      "Consolide o comportamento como estável, suspeito, anômalo ou inconclusivo.",
     termos: [
       {
         titulo: "Estável",
@@ -160,7 +172,9 @@ const gruposDeTermos = [
     ],
   },
   {
-    frase: "Recomendação técnica",
+    titulo: "Encaminhamento recomendado",
+    subtitulo:
+      "Defina o nível de acompanhamento, inspeção ou complementação necessária.",
     termos: [
       {
         titulo: "Acompanhamento normal",
@@ -210,7 +224,9 @@ function filtrarGrupos(busca) {
 
   return gruposDeTermos
     .map((grupo) => {
-      const grupoCombina = normalizarTexto(grupo.frase).includes(buscaNormalizada);
+      const grupoCombina =
+        normalizarTexto(grupo.titulo).includes(buscaNormalizada) ||
+        normalizarTexto(grupo.subtitulo).includes(buscaNormalizada);
 
       const termosFiltrados = grupo.termos.filter((termo) => {
         return (
@@ -272,7 +288,8 @@ function renderizarGrupos(grupos) {
     article.innerHTML = `
       <button class="term-group-header" type="button" aria-expanded="${index === 0 ? "true" : "false"}">
         <span class="term-group-title">
-          <strong>${grupo.frase}</strong>
+          <strong>${grupo.titulo}</strong>
+          <small>${grupo.subtitulo}</small>
         </span>
         <span class="term-group-toggle">${index === 0 ? "−" : "+"}</span>
       </button>

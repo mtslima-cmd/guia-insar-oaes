@@ -679,9 +679,22 @@ h3 {
   background: rgba(255, 255, 255, 0.035);
 }
 
+.term-group-title {
+  display: grid;
+  gap: 6px;
+}
+
 .term-group-title strong {
   font-size: 1.16rem;
   line-height: 1.35;
+}
+
+.term-group-title small {
+  max-width: 720px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  font-weight: 500;
 }
 
 .term-group-toggle {
