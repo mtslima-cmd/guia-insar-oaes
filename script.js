@@ -245,6 +245,8 @@ function renderizarGrupos(grupos) {
         <p>Tente buscar por outra palavra, como baseline, estabilidade, inconclusivo ou step change.</p>
       </article>
     `;
+
+    ativarAnimacoesDeEntrada();
     return;
   }
 
@@ -282,6 +284,8 @@ function renderizarGrupos(grupos) {
 
     termGroups.appendChild(article);
   });
+
+  ativarAnimacoesDeEntrada();
 }
 
 termGroups.addEventListener("click", (event) => {
@@ -312,4 +316,40 @@ termSearch.addEventListener("input", () => {
   }
 });
 
+function ativarAnimacoesDeEntrada() {
+  const elementos = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("is-visible");
+          observer.unobserve(entrada.target);
+        }
+      });
+    },
+    {
+      threshold: 0.14,
+      rootMargin: "0px 0px -40px 0px",
+    }
+  );
+
+  elementos.forEach((elemento) => {
+    if (!elemento.classList.contains("is-visible")) {
+      observer.observe(elemento);
+    }
+  });
+}
+
+function ativarBrilhoDoMouse() {
+  const root = document.documentElement;
+
+  window.addEventListener("pointermove", (event) => {
+    root.style.setProperty("--mouse-x", `${event.clientX}px`);
+    root.style.setProperty("--mouse-y", `${event.clientY}px`);
+  });
+}
+
 renderizarGrupos(gruposDeTermos);
+ativarAnimacoesDeEntrada();
+ativarBrilhoDoMouse();
