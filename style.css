@@ -787,6 +787,10 @@ h3 {
   border-left: 3px solid #f59e0b;
 }
 
+.term-option.tone-notice {
+  border-left: 3px solid #e7ff0b;
+}
+
 .term-option.tone-danger {
   border-left: 3px solid #fb7185;
 }
@@ -807,6 +811,11 @@ h3 {
 .term-bullet.tone-warning {
   background: #f59e0b;
   box-shadow: 0 0 14px rgba(245, 158, 11, 0.75);
+}
+
+.term-bullet.tone-notice {
+  background: #e7ff0b;
+  box-shadow: 0 0 14px rgba(182, 179, 0, 0.75);
 }
 
 .term-bullet.tone-danger {

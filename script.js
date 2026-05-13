@@ -229,32 +229,36 @@ function obterTomDoTermo(titulo) {
       "estavel",
       "acompanhamento normal",
     ],
-    warning: [
+
+    notice:[
       "de tendencia deformacional",
+      "comportamento ciclico ou sazonal",
+      "acompanhamento avancado",
+    ],
+
+    warning: [
       "pontualmente superiores a baseline",
       "indicios",
       "parcialmente coerente",
       "presenca parcial de consistencia",
-      "comportamento ciclico ou sazonal",
       "progressao homogenea do regime deformacional",
       "inflexao de tendencia",
       "suspeito",
-      "acompanhamento avancado",
       "inspecao intermediaria",
+      "de aceleracao localizada",
     ],
     danger: [
-      "de aceleracao localizada",
       "superiores a baseline",
       "evidencias consistentes",
       "anomalo",
       "inspecao especial",
       "analise complementar com instrumentacao",
+      "step change",
+      "de variacao abrupta de regime",
     ],
     neutral: [
-      "de variacao abrupta de regime",
       "dispersa",
       "ausencia de consistencia entre eixos",
-      "step change",
       "inconclusivo",
     ],
   };
