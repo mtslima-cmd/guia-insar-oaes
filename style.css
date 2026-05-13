@@ -18,6 +18,20 @@
   --container: 1120px;
 }
 
+body.light-theme {
+  --bg-main: #f4f8fb;
+  --bg-muted: #eaf2f8;
+  --bg-card: #ffffff;
+  --text-main: #07111f;
+  --text-muted: #334155;
+  --primary: #0369a1;
+  --primary-soft: rgba(3, 105, 161, 0.12);
+  --primary-border: rgba(3, 105, 161, 0.32);
+  --border: rgba(15, 23, 42, 0.14);
+  --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  --shadow-hover: 0 28px 90px rgba(15, 23, 42, 0.2);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -73,6 +87,11 @@ input {
   background: rgba(7, 17, 31, 0.72);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+body.light-theme .topbar {
+  background: rgba(244, 248, 251, 0.82);
 }
 
 .topbar-content {
@@ -866,6 +885,162 @@ h3 {
 
 .footer p {
   margin-bottom: 0;
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.theme-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+body.light-theme .hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(244, 248, 251, 0.96) 0%,
+      rgba(244, 248, 251, 0.9) 44%,
+      rgba(244, 248, 251, 0.68) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(244, 248, 251, 0.2) 0%,
+      rgba(244, 248, 251, 0.96) 100%
+    );
+}
+
+body.light-theme .hero-description {
+  color: #243447;
+  text-shadow: none;
+}
+
+body.light-theme h1 {
+  text-shadow: none;
+}
+
+body.light-theme .btn-secondary {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+body.light-theme .hero-card,
+body.light-theme .info-card,
+body.light-theme .timeline-item,
+body.light-theme .term-group,
+body.light-theme .term-empty {
+  background: rgba(255, 255, 255, 0.84);
+}
+
+body.light-theme .principle-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(234, 242, 248, 0.78));
+}
+
+body.light-theme .section-muted {
+  background:
+    radial-gradient(circle at top right, rgba(2, 132, 199, 0.08), transparent 26rem),
+    rgba(2, 132, 199, 0.035);
+}
+
+body.light-theme .search-input {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-theme .term-option {
+  background: rgba(2, 132, 199, 0.035);
+}
+
+body.light-theme .page-glow {
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.13), transparent 68%);
+}
+
+body.light-theme .eyebrow {
+  color: #0369a1;
+}
+
+body.light-theme .status-pill {
+  color: #075985;
+  background: rgba(3, 105, 161, 0.12);
+  border-color: rgba(3, 105, 161, 0.32);
+}
+
+body.light-theme .principle-item,
+body.light-theme .principle-result {
+  background: rgba(3, 105, 161, 0.055);
+  border-color: rgba(3, 105, 161, 0.2);
+}
+
+body.light-theme .principle-item span {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+body.light-theme .principle-result span {
+  color: #075985;
+  background: rgba(3, 105, 161, 0.12);
+  border-color: rgba(3, 105, 161, 0.24);
+}
+
+body.light-theme .btn-primary {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+body.light-theme .btn-primary:hover {
+  background: #0369a1;
+}
+
+body.light-theme .btn-secondary {
+  color: #07111f;
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+body.light-theme .btn-secondary:hover {
+  border-color: #0284c7;
+  background: #ffffff;
+}
+
+body.light-theme .term-group-toggle {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+body.light-theme .timeline-item span {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+body.light-theme .card-icon {
+  color: #075985;
+  background: rgba(3, 105, 161, 0.1);
+  border-color: rgba(3, 105, 161, 0.24);
+}
+
+body.light-theme .scroll-indicator {
+  border-color: rgba(3, 105, 161, 0.3);
+}
+
+body.light-theme .scroll-indicator span {
+  background: #0284c7;
 }
 
 /* Responsivo */

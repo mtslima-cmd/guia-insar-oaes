@@ -370,3 +370,34 @@ function ativarBrilhoDoMouse() {
 renderizarGrupos(gruposDeTermos);
 ativarAnimacoesDeEntrada();
 ativarBrilhoDoMouse();
+
+function ativarAlternanciaDeTema() {
+  const themeToggle = document.querySelector("#themeToggle");
+  const themeIcon = document.querySelector(".theme-icon");
+
+  if (!themeToggle || !themeIcon) {
+    return;
+  }
+
+  const temaSalvo = localStorage.getItem("tema-proarte");
+
+  if (temaSalvo === "light") {
+    document.body.classList.add("light-theme");
+    themeIcon.textContent = "☀";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    const temaClaroAtivo = document.body.classList.toggle("light-theme");
+
+    if (temaClaroAtivo) {
+      localStorage.setItem("tema-proarte", "light");
+      themeIcon.textContent = "☀";
+      return;
+    }
+
+    localStorage.setItem("tema-proarte", "dark");
+    themeIcon.textContent = "☾";
+  });
+}
+
+ativarAlternanciaDeTema();
