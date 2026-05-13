@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Guia InSAR em OAEs</title>
+  <title>PROARTE | Monitoramento de OAEs por InSAR</title>
 
   <meta
     name="description"
-    content="Guia rápido de termos para análise cinemática InSAR em Obras de Arte Especiais."
+    content="Guia rápido de termos para análise cinemática InSAR em Obras de Arte Especiais no contexto do monitoramento de OAEs."
   />
 
   <link rel="stylesheet" href="style.css" />
@@ -17,7 +17,10 @@
 <body>
   <header class="topbar">
     <div class="container topbar-content">
-      <a href="#inicio" class="logo">InSAR<span>OAEs</span></a>
+      <a href="#inicio" class="brand" aria-label="PROARTE - Monitoramento de OAEs">
+        <img src="assets/logo-proarte.png" alt="Logo PROARTE" class="brand-logo" />
+        <span class="brand-text">Monitoramento de OAEs</span>
+      </a>
 
       <nav class="nav-menu" aria-label="Menu principal">
         <a href="#principio">Princípio</a>
@@ -33,25 +36,37 @@
     <section id="inicio" class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <p class="eyebrow">Análise Cinemática InSAR em OAEs</p>
+          <p class="eyebrow">PROARTE | Monitoramento de OAEs</p>
 
-          <h1>Guia rápido para interpretação técnica de dados InSAR em pontes e estruturas</h1>
+          <h1>Guia rápido para análise cinemática InSAR em Obras de Arte Especiais</h1>
 
           <p class="hero-description">
-            Material de apoio para padronizar a leitura de deslocamentos,
+            Material de apoio para padronizar a interpretação de deslocamentos,
             velocidades, acelerações, coerência espacial, persistência temporal
-            e plausibilidade física em Obras de Arte Especiais.
+            e plausibilidade física no monitoramento de OAEs.
           </p>
 
           <div class="hero-actions">
-            <a href="#termos" class="btn btn-primary">Acessar termos</a>
+            <a href="#termos" class="btn btn-primary">Acessar guia de termos</a>
             <a href="#fluxo" class="btn btn-secondary">Ver fluxo de análise</a>
           </div>
         </div>
 
-        <div class="hero-card" aria-label="Resumo da metodologia">
+        <div class="hero-card hero-visual" aria-label="Resumo visual da metodologia">
+          <div class="orbit-icon" aria-hidden="true">
+            <span class="satellite">▰</span>
+            <span class="signal signal-one"></span>
+            <span class="signal signal-two"></span>
+            <span class="bridge-line"></span>
+            <span class="bridge-deck"></span>
+            <span class="bridge-pillar bridge-pillar-one"></span>
+            <span class="bridge-pillar bridge-pillar-two"></span>
+          </div>
+
           <span class="status-pill">Princípio central</span>
+
           <h2>A cinemática vem primeiro.</h2>
+
           <p>
             A magnitude absoluta só ganha peso quando o comportamento é
             espacialmente coerente, temporalmente persistente e fisicamente plausível.
@@ -74,6 +89,7 @@
 
         <div class="cards-grid three-columns">
           <article class="info-card">
+            <span class="card-icon" aria-hidden="true">◎</span>
             <h3>Coerência espacial</h3>
             <p>
               Verifica se pontos próximos repetem comportamento semelhante ou se
@@ -82,6 +98,7 @@
           </article>
 
           <article class="info-card">
+            <span class="card-icon" aria-hidden="true">↔</span>
             <h3>Persistência temporal</h3>
             <p>
               Avalia se o comportamento permanece ao longo do tempo ou se é uma
@@ -90,6 +107,7 @@
           </article>
 
           <article class="info-card">
+            <span class="card-icon" aria-hidden="true">⌁</span>
             <h3>Plausibilidade física</h3>
             <p>
               Confere se o padrão observado faz sentido para a estrutura, sua
@@ -107,7 +125,7 @@
           <h2>Fluxo de análise</h2>
           <p>
             Uma sequência simples para organizar a interpretação técnica dos
-            dados interferométricos.
+            dados interferométricos antes da classificação final.
           </p>
         </div>
 
@@ -151,31 +169,37 @@
 
         <div class="cards-grid three-columns">
           <article class="info-card">
+            <span class="status-dot status-stable"></span>
             <h3>Estabilidade cinemática</h3>
             <p>Séries próximas, quase paralelas e sem mudança clara de velocidade.</p>
           </article>
 
           <article class="info-card">
+            <span class="status-dot status-noise"></span>
             <h3>Provável ruído</h3>
             <p>Uma série destoa das demais, sem repetição espacial ou temporal consistente.</p>
           </article>
 
           <article class="info-card">
+            <span class="status-dot status-cycle"></span>
             <h3>Comportamento cíclico</h3>
             <p>Oscilações reversíveis, com picos e vales recorrentes ao longo do tempo.</p>
           </article>
 
           <article class="info-card">
+            <span class="status-dot status-warning"></span>
             <h3>Deformação continuada</h3>
             <p>Deslocamento progressivo, acumulado e com tendência temporal persistente.</p>
           </article>
 
           <article class="info-card">
+            <span class="status-dot status-warning"></span>
             <h3>Inflexão de tendência</h3>
             <p>Mudança de inclinação da curva, indicando alteração no regime de velocidade.</p>
           </article>
 
           <article class="info-card">
+            <span class="status-dot status-alert"></span>
             <h3>Step change</h3>
             <p>Mudança abrupta de patamar, que exige validação espacial e contextual.</p>
           </article>
@@ -189,21 +213,26 @@
           <p class="eyebrow">Consulta rápida</p>
           <h2>Guia rápido de termos</h2>
           <p>
-            Pesquise um termo ou navegue pelos principais conceitos usados na
-            redação dos relatórios.
+            Use os blocos abaixo como apoio para escolher os termos mais adequados
+            durante a redação dos relatórios de análise InSAR.
           </p>
         </div>
 
-        <label class="search-label" for="termSearch">Buscar termo</label>
+        <label class="search-label" for="termSearch">Buscar termo ou trecho do relatório</label>
         <input
           id="termSearch"
           class="search-input"
           type="search"
-          placeholder="Exemplo: baseline, estabilidade, step change..."
+          placeholder="Exemplo: estabilidade, anomalia, baseline, step change, acompanhamento..."
         />
 
-        <div id="termsGrid" class="cards-grid two-columns terms-grid">
-          <!-- Os cards serão criados pelo JavaScript -->
+        <div class="terms-helper">
+          <strong>Como usar:</strong>
+          abra uma frase do relatório, escolha o termo mais adequado e leia quando aplicá-lo.
+        </div>
+
+        <div id="termGroups" class="term-groups">
+          <!-- Os grupos serão criados pelo JavaScript -->
         </div>
       </div>
     </section>
@@ -236,7 +265,7 @@
 
   <footer class="footer">
     <div class="container footer-content">
-      <p>Guia Rápido de Análise Cinemática InSAR em OAEs.</p>
+      <p>PROARTE | Monitoramento de OAEs por InSAR.</p>
       <p>Material de apoio técnico para triagem e priorização.</p>
     </div>
   </footer>
