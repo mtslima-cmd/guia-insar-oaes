@@ -215,6 +215,59 @@ function normalizarTexto(texto) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+function obterTomDoTermo(titulo) {
+  const tituloNormalizado = normalizarTexto(titulo);
+
+  const tons = {
+    success: [
+      "de estabilidade",
+      "compativeis com a baseline",
+      "ausencia de evidencias",
+      "coerente",
+      "presenca de consistencia entre eixos",
+      "estabilidade cinematica",
+      "estavel",
+      "acompanhamento normal",
+    ],
+    warning: [
+      "de tendencia deformacional",
+      "pontualmente superiores a baseline",
+      "indicios",
+      "parcialmente coerente",
+      "presenca parcial de consistencia",
+      "comportamento ciclico ou sazonal",
+      "progressao homogenea do regime deformacional",
+      "inflexao de tendencia",
+      "suspeito",
+      "acompanhamento avancado",
+      "inspecao intermediaria",
+    ],
+    danger: [
+      "de aceleracao localizada",
+      "superiores a baseline",
+      "evidencias consistentes",
+      "anomalo",
+      "inspecao especial",
+      "analise complementar com instrumentacao",
+    ],
+    neutral: [
+      "de variacao abrupta de regime",
+      "dispersa",
+      "ausencia de consistencia entre eixos",
+      "step change",
+      "inconclusivo",
+    ],
+  };
+
+  for (const [tom, termos] of Object.entries(tons)) {
+    if (termos.includes(tituloNormalizado)) {
+      return `tone-${tom}`;
+    }
+  }
+
+  return "tone-info";
+}
+
 function filtrarGrupos(busca) {
   const buscaNormalizada = normalizarTexto(busca);
 
@@ -275,15 +328,20 @@ function renderizarGrupos(grupos) {
     }
 
     const termosHtml = grupo.termos
-      .map((termo) => {
+    .map((termo) => {
+        const tom = obterTomDoTermo(termo.titulo);
+
         return `
-          <div class="term-option">
-            <h3>${termo.titulo}</h3>
+        <div class="term-option ${tom}">
+            <h3 class="term-option-title">
+            <span class="term-bullet ${tom}" aria-hidden="true"></span>
+            ${termo.titulo}
+            </h3>
             <p>${termo.descricao}</p>
-          </div>
+        </div>
         `;
-      })
-      .join("");
+    })
+    .join("");
 
     article.innerHTML = `
       <button class="term-group-header" type="button" aria-expanded="${index === 0 ? "true" : "false"}">
