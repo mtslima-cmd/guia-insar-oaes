@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Guia InSAR em OAEs</title>
+
+  <meta
+    name="description"
+    content="Guia rápido de termos para análise cinemática InSAR em Obras de Arte Especiais."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-content">
+      <a href="#inicio" class="logo">InSAR<span>OAEs</span></a>
+
+      <nav class="nav-menu" aria-label="Menu principal">
+        <a href="#principio">Princípio</a>
+        <a href="#fluxo">Fluxo</a>
+        <a href="#assinaturas">Assinaturas</a>
+        <a href="#termos">Termos</a>
+        <a href="#downloads">Downloads</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Análise Cinemática InSAR em OAEs</p>
+
+          <h1>Guia rápido para interpretação técnica de dados InSAR em pontes e estruturas</h1>
+
+          <p class="hero-description">
+            Material de apoio para padronizar a leitura de deslocamentos,
+            velocidades, acelerações, coerência espacial, persistência temporal
+            e plausibilidade física em Obras de Arte Especiais.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#termos" class="btn btn-primary">Acessar termos</a>
+            <a href="#fluxo" class="btn btn-secondary">Ver fluxo de análise</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Resumo da metodologia">
+          <span class="status-pill">Princípio central</span>
+          <h2>A cinemática vem primeiro.</h2>
+          <p>
+            A magnitude absoluta só ganha peso quando o comportamento é
+            espacialmente coerente, temporalmente persistente e fisicamente plausível.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="principio" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Base da interpretação</p>
+          <h2>InSAR é triagem, não diagnóstico final</h2>
+          <p>
+            A análise interferométrica deve apoiar a priorização de inspeções,
+            mas não substitui vistoria de campo, avaliação estrutural ou
+            instrumentação complementar quando necessária.
+          </p>
+        </div>
+
+        <div class="cards-grid three-columns">
+          <article class="info-card">
+            <h3>Coerência espacial</h3>
+            <p>
+              Verifica se pontos próximos repetem comportamento semelhante ou se
+              o sinal aparece de forma isolada.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Persistência temporal</h3>
+            <p>
+              Avalia se o comportamento permanece ao longo do tempo ou se é uma
+              variação pontual sem continuidade.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Plausibilidade física</h3>
+            <p>
+              Confere se o padrão observado faz sentido para a estrutura, sua
+              geometria e a linha de visada do satélite.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fluxo" class="section section-muted">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Método de leitura</p>
+          <h2>Fluxo de análise</h2>
+          <p>
+            Uma sequência simples para organizar a interpretação técnica dos
+            dados interferométricos.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span>1</span>
+            <h3>Confiabilidade dos dados</h3>
+            <p>Pontos suficientes, séries contínuas e coerência interferométrica aceitável.</p>
+          </article>
+
+          <article class="timeline-item">
+            <span>2</span>
+            <h3>Coerência cinemática</h3>
+            <p>Repetição espacial, paralelismo, inflexão ou aceleração entre pontos próximos.</p>
+          </article>
+
+          <article class="timeline-item">
+            <span>3</span>
+            <h3>Magnitude absoluta</h3>
+            <p>Verificação se o acumulado é fisicamente elevado e estruturalmente plausível.</p>
+          </article>
+
+          <article class="timeline-item">
+            <span>4</span>
+            <h3>Síntese final</h3>
+            <p>Classificação como estável, suspeito, anômalo ou inconclusivo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="assinaturas" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Padrões típicos</p>
+          <h2>Assinaturas cinemáticas</h2>
+          <p>
+            Exemplos de comportamentos recorrentes na leitura de séries temporais InSAR.
+          </p>
+        </div>
+
+        <div class="cards-grid three-columns">
+          <article class="info-card">
+            <h3>Estabilidade cinemática</h3>
+            <p>Séries próximas, quase paralelas e sem mudança clara de velocidade.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Provável ruído</h3>
+            <p>Uma série destoa das demais, sem repetição espacial ou temporal consistente.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Comportamento cíclico</h3>
+            <p>Oscilações reversíveis, com picos e vales recorrentes ao longo do tempo.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Deformação continuada</h3>
+            <p>Deslocamento progressivo, acumulado e com tendência temporal persistente.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Inflexão de tendência</h3>
+            <p>Mudança de inclinação da curva, indicando alteração no regime de velocidade.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Step change</h3>
+            <p>Mudança abrupta de patamar, que exige validação espacial e contextual.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="termos" class="section section-muted">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Consulta rápida</p>
+          <h2>Guia rápido de termos</h2>
+          <p>
+            Pesquise um termo ou navegue pelos principais conceitos usados na
+            redação dos relatórios.
+          </p>
+        </div>
+
+        <label class="search-label" for="termSearch">Buscar termo</label>
+        <input
+          id="termSearch"
+          class="search-input"
+          type="search"
+          placeholder="Exemplo: baseline, estabilidade, step change..."
+        />
+
+        <div id="termsGrid" class="cards-grid two-columns terms-grid">
+          <!-- Os cards serão criados pelo JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="section">
+      <div class="container">
+        <div class="download-box">
+          <div>
+            <p class="eyebrow">Materiais de apoio</p>
+            <h2>Baixe o guia e a apresentação</h2>
+            <p>
+              Use os materiais como referência para padronização de análises,
+              relatórios e priorização de inspeções.
+            </p>
+          </div>
+
+          <div class="download-actions">
+            <a class="btn btn-primary" href="assets/guia-insar-oae.pdf" download>
+              Baixar guia
+            </a>
+
+            <a class="btn btn-secondary" href="assets/apresentacao-insar-oae.pdf" download>
+              Baixar apresentação
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>Guia Rápido de Análise Cinemática InSAR em OAEs.</p>
+      <p>Material de apoio técnico para triagem e priorização.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
